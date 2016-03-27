@@ -1,0 +1,94 @@
+<!DOCTYPE html
+<html>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+<script>
+var canvas;
+var canvasContext;
+var ballX = 50;
+var ballY = 50;
+var ballSpeedX = 10;
+var ballSpeedY = 4;
+
+var paddle1Y = 250;
+const paddle_height = 100;
+
+function calculateMousePos(evt) {
+  var rect = canvas.getBoundingClientRect();
+  var root = document.documentElement;
+  var mouseX = evt.clientX - rect.left - root.scrollLeft;
+  var mouseY = evt.clientY - rect.right - root.scrollRight;
+  return {
+    x:mouseX,
+    y:mouseY
+  };
+}
+
+window.onload = function() {
+
+  canvas = document.getElementById('gameCanvas');
+  canvasContext = canvas.getContext('2d');
+
+  var framesPerSecond = 30;
+  setInterval(function() {
+    moveEverything();
+    drawEverything();
+  }, 1000/framesPerSecond );
+
+  canvas.addEventListener('mousemove',
+    function(evt) {
+        var mousePos = calculateMousePos(evt);
+        paddle1Y = mousePos.y;
+    });
+}
+
+function moveEverything() {
+  ballX = ballX + ballSpeedX;
+  ballY = ballY + ballSpeedY;
+
+if (ballX < 0) {
+    ballSpeedX = -ballSpeedX;
+  }
+  // ballSpeedX = ballSpeedX + 1;
+if (ballX > canvas.width) {
+    ballSpeedX = -ballSpeedX;
+  }
+  if (ballY < 0) {
+    ballSpeedY = -ballSpeedY;
+  }
+  if (ballY > canvas.height) {
+      ballSpeedY = -ballSpeedY;
+    }
+}
+
+function drawEverything() {
+  // ballX = ballX + 5;
+  // console.log(ballX);
+  //blanks screen to background color
+  colorRect(0,0,canvas.width,canvas.height,'aqua');
+
+  // left paddle
+  colorRect(0,paddle1Y,10,100,'black');
+
+// draws the ball
+colorCircle(ballX, ballY, 10, 'white');
+}
+
+function colorCircle(centerX, centerY, radius, drawColor) {
+  canvasContext.fillStyle = 'purple';
+  canvasContext.beginPath();
+  canvasContext.arc(centerX, centerY, radius, 0,Math.PI*2, true);
+  canvasContext.fill();
+}
+  // colorRect(ballX,100,10,10,'purple');
+  // canvasContext.fillRect(ballX,100,10,10);
+
+function colorRect(leftX,topY, width,height, drawColor) {
+  canvasContext.fillStyle = drawColor;
+  canvasContext.fillRect(leftX,topY, width,height);
+  // canvas.Context.fillRect(leftX,topY,canvas.width,canvas.height);
+}
+// }
+</script>
+
+
+</html>

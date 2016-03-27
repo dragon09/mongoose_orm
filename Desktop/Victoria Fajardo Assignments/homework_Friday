@@ -1,0 +1,148 @@
+//Question # 1-COMPLETED-went over the logic with Jim on Friday
+
+}
+var lengths = ["hello", "what", "is", "up", "dude"]
+
+function count(ArrayofStrings){
+  var i = 0
+  var myArray=[]
+
+while (i <= ArrayofStrings.length - 1){
+
+  myArray.push(ArrayofStrings[i].length);
+
+  i++
+  }
+return myArray
+}
+
+count(lengths)
+
+//#2-Need help with this one!
+//Write a Javascript function called transmogrifier This function should accept three arguments, which you can assume will be numbers. Your function should return the "transmogrified" result
+//The transmogrified result of three numbers is the product (numbers multiplied together) of the first two numbers, raised to the power (exponentially) of the third number.
+//For example, the transmogrified result of 5, 3, and 2 is (5 times 3) to the power of 2 is 225.
+
+transmogrifier(5, 4, 3)
+transmogrifier(13, 12, 5)
+transmogrifier(42, 13, 7)
+
+//#3-Need help with this one
+//Write a function called toonify that takes two parameters, accent and sentence.
+//If accent is the string "daffy", return a modified version of sentence with all "s" replaced with "th".
+//If the accent is "elmer", replace all "r" with "w".
+//Feel free to add your own accents as well!
+///If the accent is not recognized, just return the sentence as-is.
+//Reference: MDN: String.replace()
+
+//toonify("daffy", "so you smell like sausage")
+//#=> "tho you thmell like thauthage"
+
+
+
+//Can't figure out this one out...
+function toonify(accent, sentence) {
+var accent = "so you smell like sausage";
+return tonify  = accent.replace(/s/g, "th");
+var sentence = "so you smell like sausage";
+return sentence.replace(/r/g, "w");
+{
+if (accent == "daffy");
+}
+{else if (sentence == "elmer");
+}else {
+    return sentence
+
+var
+
+
+//This one is correct, but I cannot get it to run.  I got this one from my classmate, but I cannot get it to run.
+function toonify(accent, sentence) {
+var accent=("daffy");
+ if (accent === "daffy") {
+  return sentence.replace(/s/g, "th");
+}
+  else if (accent === "elmer") {
+    return sentence.replace(/r/g, "w");
+}
+  else {
+    return sentence
+}
+
+function toonify(accent, sentence) {
+  var name = 'daffy';
+  var cartName = 'elmer';
+ if (accent === "daffy") {
+  return sentence.replace(/s/g, "th");
+}
+  else if (accent === "elmer") {
+    return sentence.replace(/r/g, "w");
+  }
+    else {
+      return sentence
+    }
+
+ }
+
+//#3-This one I went over with Jim in class and he helped me to understand it.
+
+var lengths = ["hello", "what", "is", "up", "dude"]
+
+function count(ArrayofStrings){
+  var i = 0
+  var myArray=[]
+
+while (i <= ArrayofStrings.length - 1){
+
+  myArray.push(ArrayofStrings[i].length);
+
+  i++
+  }
+return myArray
+}
+
+count(lengths)
+}
+
+
+//#4-This one should be correct, but am not sure on how and why we set it up this way other than following the formula provided on MDN Search
+var home = 'I want to go home';
+function letsGo (newPackage) {
+var newVariable = newPackage.split(' ').reverse().join(' ');
+return newVariable;
+}
+letsGo(home)
+
+//#5
+//Write a function letterReverse that accepts a single argument, a string. The function should maintain the order of words in the string but reverse the letters in each word. Don't worry about punctuation. This will be very similar to round 4 except you won't need to split them with a space.
+//EXAMPLE
+//letterReverse("Now I know what a TV dinner feels like")
+//# => "woN I wonk tahw a VT rennid sleef ekil"
+//letterReverse("Put Hans back on the line")
+//# => "tuP snaH kcab no eht enil"
+
+//Can't figure this one out...
+var home 'I just woke up';
+function letGo (newPackage) {
+var newVariable = newPackage.letterReverse('');
+retun newVariable;
+}
+
+
+//Question #6
+
+//This answer I got from my classmate, but don't the logice on how he set it up.
+
+var longest = function(array) {
+var longestWord = array.reduce(function(thisString, nextString) {
+if (thisString.length >= nextString.length)
+  return thisString;
+ else
+  return nextString;
+})
+return longestWord;
+}
+
+console.log(longest["Nothing" , "takes", "the", "taste", "out", "of", "peanut", "butter", "quite", "impenetrable", "like", "unrequited", "love"])
+
+
